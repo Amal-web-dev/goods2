@@ -99,7 +99,7 @@
             border-radius: 20px 0 0 20px;
             position: fixed;
             top: 0;
-            right: 0;
+            right: -100%;
             width: 33%;
             height: 100vh;
             background: #386e59;
@@ -141,10 +141,9 @@
             height: 100vh;
             position: fixed;
             top: 0;
-            /* left: -100%; */
-            left: 0;
+            left: -100%;
             background: #000;
-            opacity: .5;
+            opacity: .8;
             transition: .5s ease;
             scale: 0;
         }
@@ -313,6 +312,75 @@
             font-size: 20px;
         }
 
+        .modal-delete {
+            width: 400px;
+            height: 300px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+
+        .btn-yes {
+            margin: 110px 60px 0 0;
+        }
+
+        .btn-yes,
+        .btn-no {
+            padding: 20px 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: transparent;
+            font-size: 20px;
+            transition: .3s;
+        }
+
+        .btn-no:hover,
+        .btn-yes:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        .modal-reg {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            display: none;
+        }
+
+        .modal-reg input {
+            padding: 15px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 25px;
+            margin-left: 50px !important;
+        }
+
+        .modal-reg button {
+            padding: 15px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 25px;
+            margin-left: 100px !important;
+            transition: .3s;
+        }
+
+        .modal-reg button:hover {
+            background-color: black;
+            color: white;
+        }
+
         
     </style>
 
@@ -335,164 +403,6 @@
         </div>
         <div class="selected-list">
             <div class="scroll-div">
-                <!-- <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                        <div class="counter">
-                            <button class="counter-btn decrement">-</button>
-                            <span class="counter-value value">1</span>
-                            <button class="counter-btn increment">+</button>
-                        </div>
-                    <div class="product-sum-block">
-                        <p class="p-rate-2">сумма: <span class="total-sum-product"></span></p>
-                    </div>
-                </div>
-                <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product" data-productId="1"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                    <div class="counter">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value value">1</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
-                    <div class="product-sum-block">
-                        <p class="p-rate-2">сумма: <span class="total-sum-product"></span></p>
-                    </div>
-                </div>
-                <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                    <div class="counter">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value value">1</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
-                    <div class="product-sum-block"></div>
-                </div>
-                <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                    <div class="counter">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value value">1</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
-                    <div class="product-sum-block"></div>
-                </div>
-                <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                    <div class="counter">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value value">1</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
-                    <div class="product-sum-block"></div>
-                </div>
-                <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                    <div class="counter">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value value">1</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
-                    <div class="product-sum-block">
-
-                    </div>
-                </div>
-                <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                    <div class="counter">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value value">1</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
-                    <div class="product-sum-block"></div>
-                </div>
-                <div class="selected-item">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="myCheckbox">
-                    </label>
-                    <div class="img-product-block">
-                        <img class="img-product"></img>
-                    </div>
-                    <div class="indruduction-block">
-                        <p class="p-name"></p>
-                        <p class="p-rate-2">rate: <span class="p-rate"></span></p>
-                        <p class="p-box-2">в наличий: <span class="p-box"></span> </p>
-                    </div>
-                    <div class="counter">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value value">1</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
-                    <div class="product-sum-block"></div>
-                </div> -->
             </div>
         </div>
         
@@ -502,7 +412,7 @@
                 <span class="total-sum" id="total"></span>
                 <p>Товаров: <span class="how-product"></span> </p>
             </div>
-            <button>
+            <button id="btn-modal">
                 Оформить
             </button>
         </div>
@@ -510,8 +420,21 @@
     <div class="bg"></div>
     <div class="close"></div>
 
-    <div class="container">
+    <div class="container"></div>
 
+    <div class="modal-delete">
+        <h1>Are u уверен?</h1>
+        <button class="btn-yes">Да</button>
+        <button class="btn-no">No</button>
+    </div>
+
+    <div class="modal-reg">
+        <form name="sign_up">
+        <input type="text" placeholder="Имя" name="name" class="inputs">
+        <input type="number" placeholder="тел номер" name="phone" class="inputs">
+        <input type="text" placeholder="фамилия" name="surname" class="inputs">
+        <button id="btn-accept">Оформить</button>
+    </form>
     </div>
 
 
